@@ -1,0 +1,42 @@
+services:
+  rails:
+    build:
+      context: ../
+      dockerfile: provisioning/rails/Dockerfile
+      args:
+        environment: development
+        bundle_args: --with development test
+    command: bash -c "rm -f tmp/pids/server.pid && bin/rails server -p 3000 -b '0.0.0.0'"
+    volumes:
+      - ../:/app
+      - bundle:/usr/local/bundle
+    ports:
+      - "${LOCAL_RAILS_PORT}:3000"
+    stdin_open: true
+    tty: true
+    env_file: .env
+    depends_on:
+      - postgres
+
+  tailwind:
+    image: vc-bug-replica-rails
+    command: bin/rails tailwindcss:watch
+    volumes:
+      - ../:/app
+      - bundle:/usr/local/bundle
+    env_file: .env
+    tty: true
+    depends_on:
+      - rails
+
+  postgres:
+    image: postgres:17
+    env_file: .env
+    ports:
+      - "${LOCAL_POSTGRES_PORT}:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
+  bundle:

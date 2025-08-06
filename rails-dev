@@ -1,0 +1,1 @@
+./docker-dev run --rm -e EDITOR="vim" rails "$@"

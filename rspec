@@ -1,0 +1,1 @@
+./docker-dev run -e RAILS_ENV=test --rm rails bin/rspec "$@"
