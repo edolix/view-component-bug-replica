@@ -9,4 +9,4 @@ To reproduce the issue clone the repo and run these commands - everything is doc
 ./rspec
 ```
 
-I added some output logs to follow the boot process with [an initializer](config/initializers/view_component.rb) and overriding [the inherited method](app/controllers/application_controller.rb).
+I added some output logs to follow the boot process with [an initializer](config/initializers/view_component.rb) and overriding [the inherited method](app/components/application_component.rb).
