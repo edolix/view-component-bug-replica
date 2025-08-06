@@ -1,16 +1,16 @@
 ActiveSupport.on_load(:view_component) {
-  puts "[NITIALIZER] view_component"
-  puts "[NITIALIZER] Slim is defined!" if defined?(Slim)
+  puts "[INITIALIZER] view_component"
+  puts "[INITIALIZER] Slim is defined!" if defined?(Slim)
   puts ActionView::Template.template_handler_extensions.inspect
-  puts "[NITIALIZER] #{Time.now}"
+  puts "[INITIALIZER] #{Time.now}"
   puts ""
 }
 
 ActiveSupport.on_load(:action_view) do
-  puts "[NITIALIZER] action_view"
-  puts "[NITIALIZER] Slim is defined!" if defined?(Slim)
+  puts "[INITIALIZER] action_view"
+  puts "[INITIALIZER] Slim is defined!" if defined?(Slim)
   puts ActionView::Template.template_handler_extensions.inspect
-  puts "[NITIALIZER] #{Time.now}"
+  puts "[INITIALIZER] #{Time.now}"
   puts ""
 end
 
