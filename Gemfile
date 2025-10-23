@@ -46,7 +46,7 @@ gem "thruster", require: false
 gem "slim-rails", "~> 3.7"
 
 # View Components [https://viewcomponent.org/]
-gem "view_component", "~> 4.0"
+gem "view_component", "~> 4.1"
 
 # Dry-rb Libraries [https://github.com/dry-rb/dry-initializer]
 gem "dry-initializer", "~> 3.2"
